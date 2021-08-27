@@ -1,0 +1,27 @@
+<div >
+  <div class="container">
+    <div class="row mt-5">
+      <div class="offset-sm-4 col-sm-4 bg-white">
+        <div class="p-3">
+        <h1 class="text-center text-primary">Weather App</h1>
+        <form  [formGroup]="weatherSearchForm" (ngSubmit)="getWeatherData(weatherSearchForm.value)">
+          <input  type="text" placeholder="Enter City" class="form-control" formControlName="city" name="city">
+          <div class="text-center mt-1 mb-1">
+          <button type="submit" class="btn btn-outline-primary">Search</button>
+        </div>
+        </form>
+       <div class="text-center">
+        <div>City:{{WeatherData.name}}</div>
+        <div>Min Temp:{{WeatherData.temp_min}}°</div>
+        <div>Max Temp:{{WeatherData.temp_max}}°</div>
+        <div>Avg Temp: {{WeatherData.temp_celcius}}°</div>
+        <div>
+        <img src="`http://openweathermap.org/img/wn/{{WeatherData.icon}}.png`">
+        </div>
+        <div>Description:{{WeatherData.description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
